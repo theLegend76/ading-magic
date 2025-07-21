@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pretty girl Ading 💖</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: pink;
+      margin-bottom: 20px;
+    }
+
+    .countdown {
+      font-size: 4em;
+      color: gold;
+      margin: 20px 0;
+    }
+
+    .firework {
+      font-size: 2em;
+      color: #ffcc00;
+      animation: explode 0.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.4); opacity: 1; }
+    }
+
+    #fireworks {
+      display: none;
+      margin-top: 30px;
+    }
+
+    #note {
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: lightgray;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1em;
+      margin-top: 30px;
+      background: pink;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="title">Get Ready...</h1>
+<div class="countdown" id="count">3</div>
+
+<!-- Fireworks Area -->
+<div id="fireworks">
+  <div class="firework">🎆 🎇 🎆 🎇 🎆</div>
+  <div class="firework">✨ Pretty girl Ading ✨</div>
+  <div class="firework">🎇 You're the sparkle in every firework! 🎇</div>
+</div>
+
+<div id="note">Tap the button below to begin 💖</div>
+<button onclick="startShow()">Start Magic 💖</button>
+
+<!-- 🎵 Working Audio Link -->
+<audio id="music" src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/John_Bartmann/Motion_Sweet/Motion_Sweet_-_14_-_I_Will_Be_There.mp3" preload="auto"></audio>
+
+<script>
+  const countDiv = document.getElementById("count");
+  const title = document.getElementById("title");
+  const fireworks = document.getElementById("fireworks");
+  const music = document.getElementById("music");
+  const note = document.getElementById("note");
+  const button = document.querySelector("button");
+
+  function startShow() {
+    music.play();
+    button.style.display = "none";
+    note.style.display = "none";
+
+    let count = 3;
+    const countdown = setInterval(() => {
+      count--;
+      if (count === 0) {
+        clearInterval(countdown);
+        countDiv.style.display = "none";
+        title.textContent = "Pretty girl Ading 💖";
+        fireworks.style.display = "block";
+      } else {
+        countDiv.textContent = count;
+      }
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>
