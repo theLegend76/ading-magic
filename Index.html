@@ -74,7 +74,7 @@
 <button onclick="startShow()">Start Magic 💖</button>
 
 <!-- 🎵 Working Audio Link -->
-<audio id="music" src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/John_Bartmann/Motion_Sweet/Motion_Sweet_-_14_-_I_Will_Be_There.mp3" preload="auto"></audio>
+<audio <audio id="music" src="https://tinyurl.com/ading-magic-song" preload="auto"></audio>
 
 <script>
   const countDiv = document.getElementById("count");
@@ -85,6 +85,10 @@
   const button = document.querySelector("button");
 
   function startShow() {
+    music.currentTime = 0;
+music.play().catch(() => {
+  alert("Tap again to allow music 🎵");
+});
     music.play();
     button.style.display = "none";
     note.style.display = "none";
